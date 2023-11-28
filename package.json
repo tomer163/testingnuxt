@@ -11,14 +11,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@types/better-sqlite3": "^7.6.8",
     "nuxt": "^3.8.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "better-sqlite3": "^9.1.1",
-    "postgres": "^3.4.3",
-    "sqlite3": "^5.1.6"
+    "postgres": "^3.4.3"
   }
 }
