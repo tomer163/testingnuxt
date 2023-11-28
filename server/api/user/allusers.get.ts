@@ -1,8 +1,6 @@
-export default defineEventHandler((event) =>{
+export default defineEventHandler(async(event) =>{
     try{
-        const res = event.context.sqlite
-        .prepare('SELECT * FROM person;')
-        .all()
+        const res = await event.context.sql`SELECT * FROM users;`
         return res;
     }
     catch(err){

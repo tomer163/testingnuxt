@@ -1,15 +1,13 @@
 export default defineEventHandler(async(event) =>{
     try{
         const body = await readBody(event)
-        event.context.sqlite
-        .prepare('INSERT INTO person(name, last_name) VALUES (@name, @last_name)')
-        .run({ name:body.name, last_name:body.lastname })
+        await event.context.sql`INSERT INTO users(name, password) VALUES (${body.name}, ${body.password});`
         return { message:'created!' };
-    }
-    catch(err){
+    } catch(err){
+
         throw createError({
             statusCode: 400,
-            statusMessage:'bad request',
+            statusMessage:`${err}`,
             message: "Could not create user :("
         })
     }

@@ -1,7 +1,7 @@
 <template>
     <button @click="insert">create user</button>
     <input type="text" v-model="name">
-    <input type="text" v-model="lastname">
+    <input type="text" v-model="password">
     <p>{{ stuff }}</p>
     <button @click="showusers">show all users</button>
 </template>
@@ -9,7 +9,7 @@
 <script setup>
 
 const name = ref('')
-const lastname = ref('')
+const password = ref('')
 
 const stuff = ref(null)
 async function insert(){
@@ -17,7 +17,7 @@ async function insert(){
         method:'POST',
         body:{
             name:name.value,
-            lastname:lastname.value
+            password:password.value
         }
     })
     if(error.value){

@@ -5,6 +5,6 @@ export default defineNuxtConfig({
     enabled: true
   },
   runtimeConfig:{
-    dbPath:''
+    postgresUrl:''
   }
 })
